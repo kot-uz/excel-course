@@ -9,8 +9,6 @@ const isDev = !isProd;
 
 const computeFilename = extension => isProd? `bundle.[fullhash].${extension}` : `bundle.${extension}`;
 
-console.log("isProd = ", isProd);
-console.log("isDev = ", isDev);
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -43,7 +41,7 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src/favicon.ico"),
           to: path.resolve(__dirname, "dist")
-        },
+        }
       ],
     }),
     new HtmlWebpackPlugin({
